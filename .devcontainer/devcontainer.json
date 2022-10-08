@@ -2,6 +2,7 @@
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.245.2/containers/php
 {
 	"name": "PHP",
+	"runArgs": ["--env-file","${localWorkspaceFolder}/.devcontainer/devcontainer.env"],
 	"build": {
 		"dockerfile": "Dockerfile",
 		"args": { 
@@ -36,9 +37,25 @@
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "sudo chmod a+x \"$(pwd)\" && sudo rm -rf /var/www/html && sudo ln -s \"$(pwd)\" /var/www/html"
+	
+	// Starts PHP dev server in the background when the container starts 
+	"postStartCommand": "nohup bash -c 'cd /home/vscode/grav-admin; php -S localhost:8080 system/router.php &'",
+
 
 	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "vscode",
 	"workspaceMount": "source=${localWorkspaceFolder},target=/home/vscode/grav-admin/user/themes/frog-hurricane,type=bind",
-	"workspaceFolder": "/home/vscode/grav-admin/user/themes/frog-hurricane"
+	"workspaceFolder": "/home/vscode/grav-admin/user/themes/frog-hurricane",
+
+	// Passes some files in from the frog-hurricane-skeleton
+	// TODO: make this somehow configurable with a .env file
+	"mounts": [
+		"source=/c/Users/memte/Documents/GitHub/frog-hurricane-skeleton/accounts,target=/home/vscode/grav-admin/user/accounts,type=bind,consistency=cached",
+		"source=/c/Users/memte/Documents/GitHub/frog-hurricane-skeleton/config,target=/home/vscode/grav-admin/user/config,type=bind,consistency=cached",
+		// "source=/c/Users/memte/Documents/GitHub/frog-hurricane-skeleton/data,target=/home/vscode/grav-admin/user/data,type=bind,consistency=cached",
+		"source=/c/Users/memte/Documents/GitHub/frog-hurricane-skeleton/pages,target=/home/vscode/grav-admin/user/pages,type=bind,consistency=cached",
+		"source=/c/Users/memte/Documents/GitHub/frog-hurricane-skeleton/plugins,target=/home/vscode/grav-admin/user/plugins,type=bind,consistency=cached",
+
+	],
+
 }
