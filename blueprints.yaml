@@ -1,0 +1,42 @@
+name: frog-hurricane
+slug: frog-hurricane
+type: theme
+version: 0.1.0
+description: A lightweight and versatile theme for Grav CMS, built with Tailwind CSS
+icon: rebel
+author:
+  name: A lightweight and versatile theme for Grav CMS, built with Tailwind CSS
+  email: memtech3@gmail.com
+homepage: https://github.com/a-lightweight-and-versatile-theme-for-grav-cms-built-with-tailwind-css/grav-theme-frog-hurricane
+demo: http://demo.yoursite.com
+keywords: grav, theme, etc
+bugs: https://github.com/a-lightweight-and-versatile-theme-for-grav-cms-built-with-tailwind-css/grav-theme-frog-hurricane/issues
+readme: https://github.com/a-lightweight-and-versatile-theme-for-grav-cms-built-with-tailwind-css/grav-theme-frog-hurricane/blob/develop/README.md
+license: MIT
+
+dependencies:
+  - { name: grav, version: '>=1.6.0' }
+
+form:
+    validation: loose
+    fields:
+        dropdown.enabled:
+            type: toggle
+            label: Dropdown in Menu
+            highlight: 1
+            default: 1
+            options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+            validate:
+                type: bool
+        production:
+            type: toggle
+            label: Production Mode
+            highlight: 1
+            default: 1
+            options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+            validate:
+                type: bool
