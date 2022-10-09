@@ -21,6 +21,7 @@ RUN chmod +x /usr/local/bin/install-php-extensions && \
     install-php-extensions gd zip
 
 # downloads and unzips grav
+USER vscode
 WORKDIR /home/vscode/
 RUN wget -O grav-admin.zip https://getgrav.org/download/core/grav-admin/1.7.37.1
 RUN wget -O grav-admin.zip https://getgrav.org/download/core/grav-admin/1.7.37.1
@@ -29,6 +30,6 @@ RUN unzip grav-admin.zip
 RUN rm grav-admin.zip
 
 # gives vscode user ownership of its home folder
-RUN sudo chown -R vscode /home/vscode/
+# RUN sudo chown -R vscode /home/vscode/
 
 # RUN yarn add --dev prettier-plugin-twig-melody
