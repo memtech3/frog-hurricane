@@ -1,0 +1,19 @@
+version: "0.0"
+services:
+  devcontainer:
+    build:
+      context: .
+      dockerfile: Dockerfile 
+      args:
+        - VARIANT=8.1
+        - NODE_VERSION=lts/*
+    user: vscode
+    volumes:
+      - ../:/home/vscode/grav-admin/user/themes/frog-hurricane
+      - ${pathToSkeleton}/accounts:/home/vscode/grav-admin/user/accounts
+       ${pathToSkeleton}/config
+       /home/vscode/grav-admin/user/config
+      # - source: ${pathToSkeleton}/data
+      #   target: /home/vscode/grav-admin/user/data
+      - ${pathToSkeleton}/pages:/home/vscode/grav-admin/user/pages
+      - ${pathToSkeleton}/plugins:/home/vscode/grav-admin/user/plugins
