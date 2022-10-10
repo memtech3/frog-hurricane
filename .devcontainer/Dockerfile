@@ -20,6 +20,14 @@ ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/do
 RUN chmod +x /usr/local/bin/install-php-extensions && \
     install-php-extensions gd zip
 
+# ARG USERNAME=vscode
+# ARG USER_UID=1000
+# ARG USER_GID=$USER_UID
+# 
+# RUN groupmod --gid $USER_GID $USERNAME \
+#     && usermod --uid $USER_`UID --gid $USER_GID $USERNAME \
+#     && chown -R $USER_UID:$USER_GID /home/$USERNAME
+
 # downloads and unzips grav
 USER vscode
 WORKDIR /home/vscode/
@@ -31,5 +39,3 @@ RUN rm grav-admin.zip
 
 # gives vscode user ownership of its home folder
 # RUN sudo chown -R vscode /home/vscode/
-
-# RUN yarn add --dev prettier-plugin-twig-melody
