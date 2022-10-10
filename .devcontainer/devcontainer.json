@@ -2,17 +2,9 @@
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.245.2/containers/php
 {
 	"name": "PHP",
-	"runArgs": ["--env-file","${localWorkspaceFolder}/.devcontainer/devcontainer.env"],
-	"build": {
-		"dockerfile": "Dockerfile",
-		"args": { 
-			// Update VARIANT to pick a PHP version: 8, 8.1, 8.0, 7, 7.4
-			// Append -bullseye or -buster to pin to an OS version.
-			// Use -bullseye variants on local on arm64/Apple Silicon.
-			"VARIANT": "8.1",
-			"NODE_VERSION": "lts/*"
-		}
-	},
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "devcontainer",
+	"shutdownAction": "stopCompose",
 
 	// Configure tool-specific properties.
 	"customizations": {
@@ -32,30 +24,13 @@
 		}
 	},
 
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [8080],
-
+	"forwardPorts": [8000],
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "sudo chmod a+x \"$(pwd)\" && sudo rm -rf /var/www/html && sudo ln -s \"$(pwd)\" /var/www/html"
+	// "postCreateCommand": "",
 	
-	// Starts PHP dev server in the background when the container starts 
-	"postStartCommand": "nohup bash -c 'cd /home/vscode/grav-admin; php -S localhost:8080 system/router.php &'",
+	// Starts run npm install, PHP dev server in the background when the container starts 
+	"postStartCommand": "npm install; nohup bash -c 'cd /home/vscode/grav-admin; php -S localhost:8000 system/router.php &'",
 
-
-	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-	"remoteUser": "vscode",
-	"workspaceMount": "source=${localWorkspaceFolder},target=/home/vscode/grav-admin/user/themes/frog-hurricane,type=bind",
-	"workspaceFolder": "/home/vscode/grav-admin/user/themes/frog-hurricane",
-
-	// Passes some files in from the frog-hurricane-skeleton
-	// TODO: make this somehow configurable with a .env file
-	"mounts": [
-		"source=/c/Users/memte/Documents/GitHub/frog-hurricane-skeleton/accounts,target=/home/vscode/grav-admin/user/accounts,type=bind,consistency=cached",
-		"source=/c/Users/memte/Documents/GitHub/frog-hurricane-skeleton/config,target=/home/vscode/grav-admin/user/config,type=bind,consistency=cached",
-		// "source=/c/Users/memte/Documents/GitHub/frog-hurricane-skeleton/data,target=/home/vscode/grav-admin/user/data,type=bind,consistency=cached",
-		"source=/c/Users/memte/Documents/GitHub/frog-hurricane-skeleton/pages,target=/home/vscode/grav-admin/user/pages,type=bind,consistency=cached",
-		"source=/c/Users/memte/Documents/GitHub/frog-hurricane-skeleton/plugins,target=/home/vscode/grav-admin/user/plugins,type=bind,consistency=cached",
-
-	],
+	"workspaceFolder": "/home/vscode/grav-admin/user/themes/frog-hurricane"
 
 }
