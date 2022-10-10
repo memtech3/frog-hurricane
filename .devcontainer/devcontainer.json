@@ -24,12 +24,12 @@
 		}
 	},
 
-	"forwardPorts": [8080],
+	"forwardPorts": [8000],
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "",
 	
 	// Starts run npm install, PHP dev server in the background when the container starts 
-	"postStartCommand": "npm install; nohup bash -c 'cd /home/vscode/grav-admin; php -S localhost:8080 system/router.php &'",
+	"postStartCommand": "npm install; nohup bash -c 'cd /home/vscode/grav-admin; php -S localhost:8000 system/router.php &'",
 
 	"workspaceFolder": "/home/vscode/grav-admin/user/themes/frog-hurricane"
 
