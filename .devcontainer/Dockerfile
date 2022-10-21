@@ -38,4 +38,4 @@ RUN unzip grav-admin.zip
 RUN rm grav-admin.zip
 
 # gives vscode user ownership of its home folder
-RUN sudo chown -R vscode /home/vscode/
+# RUN sudo chown -R vscode /home/vscode/
