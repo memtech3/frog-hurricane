@@ -1,14 +1,13 @@
 {
-  "name": "frog-hurricane",
-  "repository": "",
-  "private": true,
-  "version": "0.1.0",
-  "description": "",
-  "scripts": {
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "prettier": "2.0.5",
-    "prettier-plugin-twig-melody": "^0.4.6"
-  }
+    "name": "frog-hurricane",
+    "repository": "",
+    "private": true,
+    "version": "0.1.0",
+    "description": "",
+    "scripts": {},
+    "dependencies": {},
+    "devDependencies": {
+        "prettier": "2.0.5",
+        "prettier-plugin-twig-melody": "^0.4.6"
+    }
 }
