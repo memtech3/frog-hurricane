@@ -1,8 +1,21 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
-    <div class="lead text-center">
-        <h1>Error!</h1>
-        {{ page.content|raw }}
-    </div>
+    <section class="hero is-fullheight-with-navbar">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="has-text-centered">
+                    {{ 'PLUGIN_ERROR.ERROR'|t }} {{ header.http_response_code }}
+                </h1>
+                <h2 class="subtitle has-text-centered">
+                    {{ page.content|raw }}
+                </h2>
+                <div class="has-text-centered">
+                    <a href="{{ home_url }}" class="button has-text-primary">
+                        BACK TO HOMEPAGE
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}
