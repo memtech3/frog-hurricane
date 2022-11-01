@@ -38,10 +38,6 @@
             {% do assets.addCss('theme://css/custom.css', 98) %}
         {% endblock %}
 
-        {% block javascripts %}
-            {% do assets.addJs('jquery', 100) %}
-        {% endblock %}
-
         {% block assets deferred %}
         {{ assets.css()|raw }}
         {{ assets.js()|raw }}
