@@ -1,4 +1,4 @@
-<nav class="navbar {% if config.theme.shadow.enabled %}has-shadow{% endif %}" role="navigation" aria-label="main navigation">
+<nav class="navbar {% if config.theme.shadow.enabled %}has-shadow{% endif %} {% if config.theme.top_fixed.enabled %}is-fixed-top{% endif %}" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a class="navbar-item" href="{{ home_url }}">
             <img src="{{ url('theme://images/logo/' ~ logo_file) }}"

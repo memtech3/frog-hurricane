@@ -44,7 +44,7 @@
         {{ assets.js()|raw }}
         {% endblock %}
     </head>
-    <body id="top" class="{{ page.header.body_classes|e }}">
+    <body id="top" class="{{ page.header.body_classes|e }} {% if config.theme.top_fixed.enabled %}is-fixed-top{% endif %}">
         {% block header %}
             <header>
                 {% block header_navigation %}
