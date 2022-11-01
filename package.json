@@ -4,10 +4,16 @@
     "private": true,
     "version": "0.1.0",
     "description": "",
-    "scripts": {},
-    "dependencies": {},
+    "scripts": {
+        "scss-build": "sass sass/styles.scss css/styles.css",
+        "scss-watch": "npm run scss-build -- --watch",
+        "start": "npm run scss-watch",
+        "purgeCSS": "purgecss --config ./purgecss.config.js"
+    },
     "devDependencies": {
+        "bulma": "^0.7.2",
         "prettier": "2.0.5",
-        "prettier-plugin-twig-melody": "^0.4.6"
+        "prettier-plugin-twig-melody": "^0.4.6",
+        "sass": "^1.55.0"
     }
 }
