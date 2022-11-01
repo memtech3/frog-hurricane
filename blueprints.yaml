@@ -30,6 +30,16 @@ form:
                 0: PLUGIN_ADMIN.DISABLED
             validate:
                 type: bool
+        shadow.enabled:
+            type: toggle
+            label: Navbar Shaddow
+            highlight: 1
+            default: 1
+            options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+            validate:
+                type: bool
         production:
             type: toggle
             label: Production Mode
