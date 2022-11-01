@@ -1,47 +1,63 @@
-{% macro loop(page) %}
-    {% for p in page.children.visible %}
-        {% set current_page = (p.active or p.activeChild) ? 'selected' : '' %}
-        {% if p.children.visible.count > 0 %}
-            <li class="has-children {{ current_page|e }}">
-                <a href="{{ p.url|e }}">
-                    {% if p.header.icon %}<i class="fa fa-{{ p.header.icon|e }}"></i>{% endif %}
-                    {{ p.menu|e }}
-                </a>
-                <ul>
-                    {{ _self.loop(p) }}
-                </ul>
-            </li>
-        {% else %}
-            <li class="{{ current_page|e }}">
-                <a href="{{ p.url|e }}">
-                    {% if p.header.icon %}<i class="fa fa-{{ p.header.icon|e }}"></i>{% endif %}
-                    {{ p.menu|e }}
-                </a>
-            </li>
-        {% endif %}
-    {% endfor %}
-{% endmacro %}
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="{{ home_url }}">
+            <img src="{{ url('theme://images/logo/' ~ logo_file) }}"
+                height="28" />
+        </a>
 
-<ul>
-    {% if config.theme.dropdown.enabled %}
-        {{ _self.loop(pages) }}
-    {% else %}
-        {% for page in pages.children.visible %}
-            {% set current_page = (page.active or page.activeChild) ? 'selected' : '' %}
-            <li class="{{ current_page|e }}">
-                <a href="{{ page.url|e }}">
-                    {% if page.header.icon %}<i class="fa fa-{{ page.header.icon|e }}"></i>{% endif %}
-                    {{ page.menu|e }}
-                </a>
-            </li>
-        {% endfor %}
-    {% endif %}
-    {% for mitem in site.menu %}
-        <li>
-            <a href="{{ mitem.url|e }}">
-                {% if mitem.icon %}<i class="fa fa-{{ mitem.icon|e }}"></i>{% endif %}
-                {{ mitem.text|e }}
-            </a>
-        </li>
-    {% endfor %}
-</ul>
+        <a role="button"
+            class="navbar-burger"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+            {% for page in pages.children %}
+                {% if page.visible %}
+                    {% set counter = 0 %}
+                    {% for child in page.children %}
+                        {% if child.modular is empty %}
+                            {% set counter = counter + 1 %}
+                        {% endif %}
+                    {% endfor %}
+                    {% if
+                        counter is same as(0)
+                            or not config.theme.dropdown.enabled %}
+                        <a class="navbar-item" href="{{ page.url }}">
+                            {{ page.title }}
+                        </a>
+                    {% else %}
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a class="navbar-link" href="{{ page.url }}">
+                                {{ page.title }}
+                            </a>
+                            <div class="navbar-dropdown">
+                                {% for child in page.children %}
+                                    <a class="navbar-item"
+                                        href="{{ child.url }}">
+                                        {{ child.title }}
+                                    </a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="buttons">
+                    <a class="button is-primary"><strong>Sign up</strong></a>
+                    <a class="button is-light">Log in</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
