@@ -1,1 +1,8 @@
-*/ css go here /*
+/* css go here */
+
+/* restyles notices back to default styles (bulma breaks notice styling) */
+/* NEEDS TO BE IMPLEMENTED IN SASS AFTER WE TRANSITION TO SASS */
+.notices p {
+    padding: 1px 1px 1px 30px;
+    margin: 15px 0;
+}
