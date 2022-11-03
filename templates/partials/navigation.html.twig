@@ -1,4 +1,5 @@
-<nav class="navbar" role="navigation" aria-label="main navigation">
+{% set navbar = config.theme.navbar %}
+<nav class="navbar {% if navbar.shadow.enabled %}has-shadow{% endif %} {% if navbar.top_fixed.enabled %}is-fixed-top{% endif %}" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a class="navbar-item" href="{{ home_url }}">
             <img src="{{ url('theme://images/logo/' ~ logo_file) }}"
@@ -27,9 +28,7 @@
                             {% set counter = counter + 1 %}
                         {% endif %}
                     {% endfor %}
-                    {% if
-                        counter is same as(0)
-                            or not config.theme.dropdown.enabled %}
+                    {% if counter is same as(0) or not navbar.dropdown.enabled %}
                         <a class="navbar-item" href="{{ page.url }}">
                             {{ page.title }}
                         </a>
