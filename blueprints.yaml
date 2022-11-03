@@ -20,36 +20,43 @@ dependencies:
 form:
     validation: loose
     fields:
-        dropdown.enabled:
-            type: toggle
-            label: Dropdown in Menu
-            highlight: 1
-            default: 1
-            options:
-                1: PLUGIN_ADMIN.ENABLED
-                0: PLUGIN_ADMIN.DISABLED
-            validate:
-                type: bool
-        shadow.enabled:
-            type: toggle
-            label: Navbar Shaddow
-            highlight: 1
-            default: 1
-            options:
-                1: PLUGIN_ADMIN.ENABLED
-                0: PLUGIN_ADMIN.DISABLED
-            validate:
-                type: bool
-        top_fixed.enabled:
-            type: toggle
-            label: Navbar Fixed to Top of Screen
-            highlight: 1
-            default: 1
-            options:
-                1: PLUGIN_ADMIN.ENABLED
-                0: PLUGIN_ADMIN.DISABLED
-            validate:
-                type: bool
+        navbar:
+            type: fieldset
+            title: Navbar
+            icon: navicon
+            collapsed: false
+            collapsible: true 
+            fields:
+                navbar.dropdown.enabled:
+                    type: toggle
+                    label: Dropdown in Menu
+                    highlight: 1
+                    default: 1
+                    options:
+                        1: PLUGIN_ADMIN.ENABLED
+                        0: PLUGIN_ADMIN.DISABLED
+                    validate:
+                        type: bool
+                navbar.shadow.enabled:
+                    type: toggle
+                    label: Navbar Shadow
+                    highlight: 1
+                    default: 1
+                    options:
+                        1: PLUGIN_ADMIN.ENABLED
+                        0: PLUGIN_ADMIN.DISABLED
+                    validate:
+                        type: bool
+                navbar.top_fixed.enabled:
+                    type: toggle
+                    label: Navbar Fixed to Top of Screen
+                    highlight: 1
+                    default: 1
+                    options:
+                        1: PLUGIN_ADMIN.ENABLED
+                        0: PLUGIN_ADMIN.DISABLED
+                    validate:
+                        type: bool
         production:
             type: toggle
             label: Production Mode
