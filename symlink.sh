@@ -7,10 +7,12 @@ wget https://getgrav.org/download/core/grav-admin/1.7.37.1 -O $gravZipName
 echo "Unzipping grav"
 unzip $gravZipName
 
-echo "Installing php and required php extensions"
+echo "Installing php, npm and required php extensions"
 sudo apt install php 
 sudo apt update && upgrade
 sudo apt install php-curl php-dom php-gd php-xml php-zip php-mbstring
+sudo apt install npm
+
 
 currentPath=$(realpath ".")
 gravPath="$currentPath/grav-admin"
@@ -29,3 +31,7 @@ symlinkSkeletonFolder "plugins"
 
 echo "Symlinking theme" 
 ln -s $currentPath/frog-hurricane $gravPath/user/themes
+
+echo "Installing npm dependencies"
+cd frog-hurricane
+npm install
