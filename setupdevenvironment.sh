@@ -1,5 +1,10 @@
 # If you are having trouble running this file try running 'chomd +x setupdevenvironment.sh'
 
+echo "Installing php, unzip, npm and required php extensions"
+sudo apt install php 
+sudo apt update && upgrade
+sudo apt install php-curl php-dom php-gd php-xml php-zip php-mbstring npm unzip``
+
 cd ../
 echo "Cloning frog-hurricane-skeleton"
 git clone https://github.com/memtech3/frog-hurricane-skeleton
@@ -9,11 +14,6 @@ wget https://getgrav.org/download/core/grav-admin/1.7.37.1 -O $gravZipName
 echo "Unzipping grav"
 unzip $gravZipName
 
-echo "Installing php, npm and required php extensions"
-sudo apt install php 
-sudo apt update && upgrade
-sudo apt install php-curl php-dom php-gd php-xml php-zip php-mbstring
-sudo apt install npm
 
 
 currentPath=$(realpath ".")
