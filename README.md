@@ -1,7 +1,7 @@
 # frog-hurricane
-A lightweight and versatile theme for Grav CMS, built with Tailwind CSS
+A lightweight and versatile theme for Grav CMS, built with Bulma CSS
 
-## Developing on Linux
+## Developing On Linux
 Run setupdevenvironment.sh to quickly set up a development environment. This script does the following:
 ### Installs
 - PHP
@@ -10,9 +10,9 @@ Run setupdevenvironment.sh to quickly set up a development environment. This scr
 - nodeJS project dependencies (runs npm install)
 ### Other Stuff
 - Runs sudo apt update&&upgrade while installing php stuff
-- Downloads and unzips copy of Grav (with admin panel) in ../ (parent directory of this directory), does not delete the downloaded zip file
-- Clones the frog-hurricane-skeleton repository (sample content and configuration for Grav)
-- Symlinks theme and some of the frog-hurricane-skeleton folders into folders in grav-admin (allows grav to use our theme, content, and config)
+- Downloads and unzips a copy of Grav (with admin panel) in `../grav-admin` (creates a `grav-admin` folder in the parent directory of the folder that this repository was cloned into), does not delete the downloaded zip file
+- Clones the `frog-hurricane-skeleton` repository (sample content and configuration for Grav) into `../frog-hurricane-skeleton` (creates a `frog-hurricane-skeleton` folder in the parent directory of the folder that this repository was cloned into)
+- Symlinks theme (this repository's folder) and some of the `frog-hurricane-skeleton` folders into appropriate folders in `grav-admin` (allows Grav to use our theme, content, and config)
 
-### Starting Grav Dev Server
-If you used setupdevenvironment.sh to setup your dev environment you can use startdevserver.sh to start the Grav dev server
+### Starting The Grav Dev Server
+If you used `setupdevenvironment.sh` to setup your dev environment you can use `startdevserver.sh` to start the Grav dev server. This script just runs `bin/grav server` from the `grav-admin` directory.
