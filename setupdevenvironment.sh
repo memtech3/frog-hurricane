@@ -38,3 +38,5 @@ echo "Installing npm dependencies"
 cd frog-hurricane
 npm install
 
+echo "Making startdevserver.sh executable"
+chmod +x startdevserver.sh
