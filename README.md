@@ -1,6 +1,7 @@
 # frog-hurricane
 A lightweight and versatile theme for Grav CMS, built with Bulma CSS
-
+## frog-hurricane-skeleton
+[frog-hurricane-skeleton](https://github.com/memtech3/frog-hurricane-skeleton) is a repository with sample content and configuration files to help with development.
 ## Developing On Linux
 Run setupdevenvironment.sh to quickly set up a development environment. This script does the following:
 ### Installs
@@ -16,3 +17,15 @@ Run setupdevenvironment.sh to quickly set up a development environment. This scr
 
 ### Starting The Grav Dev Server
 If you used `setupdevenvironment.sh` to setup your dev environment you can use `startdevserver.sh` to start the Grav dev server. This script just runs `bin/grav server` from the `grav-admin` directory.
+
+### frog-hurricane-skeleton Admin Credentials
+For convenience `frog-hurricane-skeleton` is configured with an admin accoutn with the following credentials:
+- Username: admin
+- Password: Admin1234!
+
+### DO NOT USE `frog-hurricane-skeleton` or `setupdevenvironment.sh` IN A PRODUCTION ENVIRONMENT
+**This notice only applies to configuration files in the `frog-hurricane-skeleton` repository and the `setupdevenvironment.sh` script, this notice does not apply to the rest of the theme (`frog-hurricane`, this repository)**
+
+Security, caching, and other potentially critical settings have been configured in the best interest of developer convenience, NOT security and production best practices. 
+
+In the future this may change, at which point this notice will be removed.
