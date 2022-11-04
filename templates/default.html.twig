@@ -1,6 +1,9 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
+    {% if header.hero.enabled %}
+        {% include 'partials/hero.html.twig' %}
+    {% endif %}
     <div class="px-3 py-4 mx-auto" style="max-width:1300px">
         {{ page.content|raw }}
     </div>
