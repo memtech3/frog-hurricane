@@ -1,3 +1,5 @@
+# If you are having trouble running this file try running 'chomd +x setupdevenvironment.sh'
+
 cd ../
 echo "Cloning frog-hurricane-skeleton"
 git clone https://github.com/memtech3/frog-hurricane-skeleton
@@ -35,3 +37,4 @@ ln -s $currentPath/frog-hurricane $gravPath/user/themes
 echo "Installing npm dependencies"
 cd frog-hurricane
 npm install
+
