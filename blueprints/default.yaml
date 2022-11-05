@@ -8,29 +8,14 @@ form:
     tabs:
       type: tabs
       active: 1
-
       fields:
         hero:
           type: tab
           title: Hero
-
+          ordering@: 1
           fields:
-            header.hero.enabled:
-              type: toggle
-              label: Hero
-              highlight: 1
-              default: 0
-              options:
-                  1: PLUGIN_ADMIN.ENABLED
-                  0: PLUGIN_ADMIN.DISABLED
-              validate:
-                  type: bool
-
-            # header.an_example_select_box:
-            #   type: select
-            #   label: Select one of the following
-            #   default: one
-            #   options:
-            #     one: One
-            #     two: Two
-            #     three: Three
+            header.hero:
+              type: section
+              title:
+              import@:
+                type: partials/hero
