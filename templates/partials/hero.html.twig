@@ -1,4 +1,9 @@
-<section class="hero is-medium is-link">
+{% if hero.appearance.color %}
+  {% set color = "is-" ~ hero.appearance.color %}
+{% else %}
+  {% set color = "is-primary" %}
+{% endif %}
+<section class="hero {{ color }} {% if hero.appearance.height %}is-{{hero.appearance.height}}{% endif %}">
     <div class="hero-body">
       <div class="container has-text-centered">
         <h1 class="title is-1">

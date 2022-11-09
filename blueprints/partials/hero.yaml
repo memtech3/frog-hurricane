@@ -59,3 +59,32 @@ form:
           accept:
             - image/*
             - video/*
+    .appearance:
+      type: fieldset
+      title: Appearance
+      help:
+      info: Change the appearance of the hero
+      icon: paint-brush
+      fields:
+        .color:
+          type: select
+          toggleable: true
+          label: Color
+          options:
+            primary: Primary (Teal)
+            link: Link (Blue)
+            info: Info (Light Blue)
+            success: Success (Green)
+            warning: Warning (Yellow)
+            danger: Danger (Red)
+        .height:
+          type: select
+          toggleable: true
+          label: Height
+          options:
+            small: Small
+            medium: Medium
+            large: Large
+            halfheight: Half Height
+            fullheight: Full Height
+            fullheight-with-navbar: Full Height with Navbar
