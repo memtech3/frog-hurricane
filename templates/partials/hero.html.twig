@@ -3,21 +3,24 @@
 {% else %}
   {% set color = "is-primary" %}
 {% endif %}
-<section class="hero {{ color }} {% if hero.appearance.height %}is-{{hero.appearance.height}}{% endif %}">
-    <div class="hero-body">
-      <div class="container has-text-centered">
-        <h1 class="title is-1">
-          {% if hero.content.title %}
-            {{ hero.content.title }}
-          {% else %}
-            {{page.title}}
-          {% endif %}
-        </h1>
-        {% if hero.content.subtitle %}
-          <p class="subtitle is-4">
-            {{ hero.content.subtitle }}
-          </p>
+<section class="hero {{ color }} {% if hero.appearance.height %}is-{{hero.appearance.height}}{% endif %} {% if hero.backgroundimage.image %}has-background{% endif %}">
+  {% if hero.backgroundimage.image %}
+    <img src="{{hero.backgroundimage.image}}" alt="" class="hero-background is-transparent">
+  {% endif %}
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title is-1">
+        {% if hero.content.title %}
+          {{ hero.content.title }}
+        {% else %}
+          {{page.title}}
         {% endif %}
-      </div>
+      </h1>
+      {% if hero.content.subtitle %}
+        <p class="subtitle is-4">
+          {{ hero.content.subtitle }}
+        </p>
+      {% endif %}
     </div>
-  </section>
+  </div>
+</section>

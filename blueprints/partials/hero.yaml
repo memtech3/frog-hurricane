@@ -25,7 +25,7 @@ form:
           type: text
           label: Custom Subtitle
           toggleable: true
-    .imageConfig:
+    .backgroundimage:
       type: fieldset
       title: Background
       help:
@@ -42,7 +42,7 @@ form:
               0: PLUGIN_ADMIN.DISABLED
           validate:
               type: bool
-        .customimage:
+        .image:
           type: mediapicker
           folder: 'user/pages/media'
           label: Select an image to use as a background
