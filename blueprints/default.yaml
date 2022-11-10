@@ -1,0 +1,21 @@
+title: Default
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+      fields:
+        hero:
+          type: tab
+          title: Hero
+          ordering@: 1
+          fields:
+            header.hero:
+              type: section
+              title:
+              import@:
+                type: partials/hero

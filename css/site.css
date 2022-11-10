@@ -6,3 +6,19 @@
     padding: 1px 1px 1px 30px;
     margin: 15px 0;
 }
+
+/* from https://codepen.io/leonidboykov/pen/Edvvpm, CODEPEN HAS SASS SOURCES */
+.hero.has-background {
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-background {
+    position: absolute;
+    object-fit: cover;
+    object-position: center center;
+    width: 100%;
+    height: 100%;
+  }
+  .hero-background.is-transparent {
+    opacity: 0.3;
+  }
