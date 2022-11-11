@@ -1,0 +1,8 @@
+title: Hero
+'@extends': default
+
+form:
+  fields:
+    hero:
+      import@:
+        type: partials/hero
