@@ -1,0 +1,32 @@
+title: Tiles
+
+form:
+  fields:
+    tiles:
+      type: tabs
+      active: 1
+      fields:
+        tiles:
+          type: tab
+          title: Tiles
+          ordering@: 0
+          fields:
+            header.tiles:
+              type: list
+              label: Tiles
+              fields:
+                .icon:
+                  type: iconpicker
+                  label: Icon
+                  toggleable: true
+                .title:
+                  type: text
+                  label: Title
+                  toggleable: true
+                .subtitle:
+                  type: text
+                  label: Subtitle
+                  toggleable: true
+                .body:
+                  label: Body
+                  type: editor
