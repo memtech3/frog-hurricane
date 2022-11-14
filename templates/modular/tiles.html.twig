@@ -4,10 +4,10 @@
       <div class="tile is-parent">
         <div class="tile is-child box">
           <div class="container has-text-centered">
+            {% if tile.icon %}
+              <span class="fa {{ tile.icon }}" style="font-size:8em"></span>
+            {% endif %}
             <h3 class="title">
-              {% if tile.icon %}
-                <span class="fa {{ tile.icon }}" style="font-size:8em"></span> <br>
-              {% endif %}
               {{ tile.title }}
             </h3>
             <p class="subtitle">{{ tile.subtitle }}</p>
