@@ -2,17 +2,15 @@
   <div class="tile is-ancestor">
     {% for tile in header.tiles %}
       <div class="tile is-parent">
-        <div class="tile is-child box">
-          <div class="container has-text-centered">
-            {% if tile.icon %}
-              <span class="fa {{ tile.icon }}" style="font-size:6em"></span>
-            {% endif %}
-            <h3 class="title">
-              {{ tile.title }}
-            </h3>
-            <p class="subtitle">{{ tile.subtitle }}</p>
-            <p> {{ tile.body|markdown }} </p>
-          </div>
+        <div class="tile is-child box container has-text-centered">
+          {% if tile.icon %}
+            <span class="fa {{ tile.icon }}" style="font-size:6em"></span>
+          {% endif %}
+          <h3 class="title">
+            {{ tile.title }}
+          </h3>
+          <p class="subtitle">{{ tile.subtitle }}</p>
+          <p> {{ tile.body|markdown }} </p>
         </div>
       </div>
     {% endfor %}
