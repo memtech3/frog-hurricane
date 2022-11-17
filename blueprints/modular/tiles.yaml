@@ -30,3 +30,22 @@ form:
                 .body:
                   label: Body
                   type: editor
+                .button:
+                  type: fieldset
+                  title: Button
+                  fields:
+                    .enabled:
+                      type: toggle
+                      highlight: 1
+                      default: 0
+                      options:
+                          1: PLUGIN_ADMIN.ENABLED
+                          0: PLUGIN_ADMIN.DISABLED
+                      validate:
+                          type: bool
+                    .text:
+                      label: Button text
+                      type: text
+                    .link:
+                      label: Button Link
+                      type: text

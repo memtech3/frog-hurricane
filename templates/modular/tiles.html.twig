@@ -11,7 +11,9 @@
           </h3>
           <p class="subtitle">{{ tile.subtitle }}</p>
           <p> {{ tile.body|markdown }} </p>
-          <a class="button is-primary mt-auto">Anchor</a>
+          {% if tile.button.enabled %}
+            <a class="button is-primary mt-auto" href="{{ tile.button.link }}">{{ tile.button.text }}</a>
+          {% endif %}
         </div>
       </div>
     {% endfor %}
