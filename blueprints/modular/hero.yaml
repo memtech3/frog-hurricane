@@ -17,6 +17,25 @@ form:
           type: text
           label: Custom Subtitle
           toggleable: true
+        .buttons:
+          type: list
+          label: Buttons
+          fields:
+            .color:
+              type: select
+              label: Color
+              options:
+                primary: Primary (Teal)
+                link: Link (Blue)
+                info: Info (Light Blue)
+                success: Success (Green)
+                warning: Warning (Yellow)
+                danger: Danger (Red)
+                white: White
+            .text:
+              type: text
+              label: Button text
+              
     header.backgroundimage:
       type: fieldset
       title: Background

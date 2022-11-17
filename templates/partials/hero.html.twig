@@ -21,6 +21,11 @@
           {{ hero.content.subtitle }}
         </p>
       {% endif %}
+      {% for button in hero.content.buttons %}
+        <a href="" class="button is-{{ button.color }}">
+          {{ button.text }}
+        </a>
+      {% endfor %}
     </div>
   </div>
 </section>
