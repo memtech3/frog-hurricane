@@ -12,7 +12,12 @@
           <p class="subtitle">{{ tile.subtitle }}</p>
           <p> {{ tile.body|markdown }} </p>
           {% if tile.button.enabled %}
-            <a class="button is-primary mt-auto" href="{{ tile.button.link }}">{{ tile.button.text }}</a>
+            {% if tile.button.color %}
+              {% set color = "is-" ~ tile.button.color %}
+            {% else %}
+              {% set color = "is-primary" %}
+            {% endif %}
+            <a class="button {{ color }} mt-auto" href="{{ tile.button.link }}">{{ tile.button.text }}</a>
           {% endif %}
         </div>
       </div>

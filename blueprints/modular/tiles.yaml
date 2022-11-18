@@ -49,3 +49,14 @@ form:
                     .link:
                       label: Button Link
                       type: text
+                    .color:
+                      type: select
+                      label: Color
+                      options:
+                        primary: Primary (Teal)
+                        link: Link (Blue)
+                        info: Info (Light Blue)
+                        success: Success (Green)
+                        warning: Warning (Yellow)
+                        danger: Danger (Red)
+                        white: White
