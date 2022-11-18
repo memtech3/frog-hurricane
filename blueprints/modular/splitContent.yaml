@@ -1,0 +1,33 @@
+title: Split Content
+
+form:
+  fields:
+    tiles:
+      type: tabs
+      active: 1
+      fields:
+        tiles:
+          type: tab
+          title: Split Content
+          ordering@: 0
+          fields:
+            header.left:
+              type: fieldset
+              title: Left
+              fields:
+                .title:
+                  type: text
+                  label: Title
+                .content:
+                  label: Content
+                  type: editor
+            header.right:
+              type: fieldset
+              title: Right
+              fields:
+                .title:
+                  type: text
+                  label: Title
+                .content:
+                  label: Content
+                  type: editor
