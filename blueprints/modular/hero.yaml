@@ -35,6 +35,9 @@ form:
             .text:
               type: text
               label: Button text
+            .link:
+              type: text
+              label: Link URL
               
     header.backgroundimage:
       type: fieldset
