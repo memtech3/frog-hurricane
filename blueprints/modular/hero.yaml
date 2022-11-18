@@ -1,8 +1,104 @@
 title: Hero
-'@extends': default
 
 form:
   fields:
-    hero:
-      import@:
-        type: partials/hero
+    header.content:
+      type: fieldset
+      title: Content
+      help:
+      info: Configure content of the hero
+      icon: file-text
+      fields:
+        .title:
+          type: text
+          label: Custom Title
+          toggleable: true
+        .subtitle:
+          type: text
+          label: Custom Subtitle
+          toggleable: true
+        .buttons:
+          type: list
+          label: Buttons
+          fields:
+            .color:
+              type: select
+              label: Color
+              options:
+                primary: Primary (Teal)
+                link: Link (Blue)
+                info: Info (Light Blue)
+                success: Success (Green)
+                warning: Warning (Yellow)
+                danger: Danger (Red)
+                white: White
+            .text:
+              type: text
+              label: Button text
+            .link:
+              type: text
+              label: Link URL
+              
+    header.backgroundimage:
+      type: fieldset
+      title: Background
+      help:
+      info: Configure the background of the hero
+      icon: image
+      fields:
+        .enabled:
+          type: toggle
+          label: Hero
+          highlight: 1
+          default: 0
+          options:
+              1: PLUGIN_ADMIN.ENABLED
+              0: PLUGIN_ADMIN.DISABLED
+          validate:
+              type: bool
+        .image:
+          type: mediapicker
+          folder: 'user/pages/media'
+          label: Select an image to use as a background
+          preview_images: true
+          toggleable: true
+        .usedefaultimage:
+          type: checkbox
+          label: Use site default hero image
+          default: false
+        .mediaupload:
+          type: file
+          label: Upload media
+          destination: 'user/pages/media/'
+          accept:
+            - image/*
+            - video/*
+    header.appearance:
+      type: fieldset
+      title: Appearance
+      help:
+      info: Change the appearance of the hero
+      icon: paint-brush
+      fields:
+        .color:
+          type: select
+          toggleable: true
+          label: Color
+          options:
+            primary: Primary (Teal)
+            link: Link (Blue)
+            info: Info (Light Blue)
+            success: Success (Green)
+            warning: Warning (Yellow)
+            danger: Danger (Red)
+        .height:
+          type: select
+          toggleable: true
+          label: Height
+          options:
+            small: Small
+            medium: Medium
+            large: Large
+            halfheight: Half Height
+            fullheight: Full Height
+            fullheight-with-navbar: Full Height with Navbar

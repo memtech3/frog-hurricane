@@ -1,0 +1,26 @@
+<div class="px-3 py-4 mx-auto" style="max-width:1300px">
+  <div class="tile is-ancestor">
+    {% for tile in header.tiles %}
+      <div class="tile is-parent">
+        <div class="box container has-text-centered is-flex is-flex-direction-column">
+          {% if tile.icon %}
+            <span class="fa {{ tile.icon }}" style="font-size:6em"></span>
+          {% endif %}
+          <h3 class="title">
+            {{ tile.title }}
+          </h3>
+          <p class="subtitle">{{ tile.subtitle }}</p>
+          <p> {{ tile.body|markdown }} </p>
+          {% if tile.button.enabled %}
+            {% if tile.button.color %}
+              {% set color = "is-" ~ tile.button.color %}
+            {% else %}
+              {% set color = "is-primary" %}
+            {% endif %}
+            <a class="button {{ color }} mt-auto" href="{{ tile.button.link }}">{{ tile.button.text }}</a>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
