@@ -2,13 +2,13 @@
     <div class="column px-3 mx-auto">
         <div class="">            
             <h2 class="has-text-centered">{{ header.left.title }}</h2>
-            <p class="has-text-justified">{{ header.left.content }}</p>
+            <span class="has-text-justified">{{ header.left.content|markdown }}</span>
         </div>
     </div>
     <div class="column px-3 mx-auto">
         <div class="">
             <h2 class="has-text-centered">{{ header.right.title }}</h2>
-            <p class="has-text-justified">{{ header.right.content }}</p>
+            <span class="has-text-justified">{{ header.right.content|markdown }}</span>
         </div>
     </div>
 </div>
