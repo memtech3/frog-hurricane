@@ -5,10 +5,11 @@
   "version": "0.1.0",
   "description": "",
   "scripts": {
+    "css-build": "sass sass/styles.sass css/styles.css --style=compressed",
+    "css-watch": "npm run css-build -- --watch"
   },
-  "dependencies": {},
-  "devDependencies": {
-    "prettier": "2.0.5",
-    "prettier-plugin-twig-melody": "^0.4.6"
+  "dependencies": {
+    "bulma": "^0.9.4",
+    "sass": "^1.56.1"
   }
 }
