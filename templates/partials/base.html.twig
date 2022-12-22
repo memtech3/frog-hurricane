@@ -61,17 +61,7 @@
         {% endblock %}
 
         {% block footer %}
-            <div class="footer text-center">
-                <div class="wrapper padding">
-                    <p>
-                        <a href="https://getgrav.org">Grav</a> was <i class="fa fa-code">
-
-                        </i> with <i class="fa fa-heart"></i> by <a href="https://trilby.media">
-                            Trilby Media, LLC
-                        </a>.
-                    </p>
-                </div>
-            </div>
+            {% include 'partials/footer.html.twig' %}
         {% endblock %}
 
         {% block bottom %}
@@ -104,5 +94,6 @@
 
             }); }); });
         </script>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     </body>
 </html>
